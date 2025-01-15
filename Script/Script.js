@@ -45,8 +45,13 @@ function adicionarTask() {
             taskList.removeChild(listItem);
         });
 
-        checkbox.addEventListener('click', () => {
-            span.classList.toggle('active');
+        checkbox.addEventListener('click', () => { 
+            if (span.style.textDecoration == 'line-through') { 
+                span.style.textDecoration = 'none';
+            } 
+            else { 
+                span.style.textDecoration = 'line-through'; 
+            } 
         });
     }
 }
