@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/style.css">
+    <title>To do list</title>
+</head>
+<body>
+    <h1>To do List</h1>
+
+    <div>
+        <input type="checkbox" name="check_01" id="check_01" >
+        <p id="task_01">Comprar 4 doritos.</p>
+    </div>
+    <div>
+        <input type="checkbox" name="check_02" id="check_02">
+        <p>30 min de cardio.</p>
+    </div>
+
+    <script>
+        var checkbox = document.getElementById("check_01");
+        var isChecked = checkbox.checked;
+        var task = document.getElementById("task_01");
+
+        checkbox.addEventListener("click", taxar)
+
+        function taxar(){
+            checkbox = document.getElementById("check_01");
+            isChecked = checkbox.checked;
+            if(isChecked){
+                task.style.textDecoration = "line-through"
+            }else{
+                task.style.textDecoration = "none"
+            }
+        }
+
+   </script>
+</body>
+</html>
