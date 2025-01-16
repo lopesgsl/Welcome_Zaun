@@ -32,6 +32,7 @@ document.getElementById("login").addEventListener("click", function(e)
         if (senha == usuarios[n].Usersenha)
         {
             alert("Logado com sucesso!");
+            window.location.href = 'To_do.html';
         }
 
         else
@@ -58,3 +59,5 @@ class User
         this.Usersenha = novasenha;
     }
 }
+
+

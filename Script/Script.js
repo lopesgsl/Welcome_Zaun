@@ -31,7 +31,8 @@ function adicionarTask() {
 
         const deletar = document.createElement('button');
         deletar.className = 'btnDelete';
-        deletar.innerHTML = '<i class="fa-solid fa-xmark"></i>'; 
+        deletar.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        
 
         listItem.appendChild(checkbox);
         listItem.appendChild(span);
