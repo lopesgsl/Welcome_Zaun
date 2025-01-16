@@ -1,13 +1,23 @@
 @charset "UTF-8";
 
-/*
-div{
-    margin: 20px;
-    display: flex;
-    background-color: gray;
-    width: 300px;
+@font-face {
+    font-family: "TwinMarker";
+    src: url(../Font/TwinMarker.ttf);
 }
-p{
-    margin:10px;
+
+:root{
+
+
 }
-*/
+*{
+    font-family: "TwinMarker";
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../Imagens/plano_de_fundo/Wallpaper_02.jpg);
+    background-size: cover;
+    background-position: bottom;
+    width: 100vw;
+    height: 100vh;
+}
