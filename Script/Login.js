@@ -3,13 +3,13 @@ let usuarios = [];
 let nome;
 let senha;
 
-//Buscando se há usuarios salvos
+//Buscando se ha usuarios salvos
 if (localStorage.getItem("usuarios") != null)
 {
     usuarios = JSON.parse(localStorage.getItem("usuarios"));
 }
 
-//Botão do login
+//Botao do login
 document.getElementById("login").addEventListener("click", function(e)
 {
     e.preventDefault();
@@ -18,7 +18,7 @@ document.getElementById("login").addEventListener("click", function(e)
     nome = document.getElementById("lrname").value;
     senha = document.getElementById("lrpword").value;
 
-    let n = 0; //Percorrer o array e diferenciar os usuários com suas resppectivas senhas
+    let n = 0; //Percorrer o array e diferenciar os usuarios com suas resppectivas senhas
 
     //O -1 que por algum motivo evita erro de array
     while (nome != usuarios[n].Usernome && n < usuarios.length-1)
@@ -26,11 +26,12 @@ document.getElementById("login").addEventListener("click", function(e)
         n++;
     }
 
-    //Verifica se o usuário existe e se a senh corresponde
+    //Verifica se o usuario existe e se a senh corresponde
     if (nome == usuarios[n].Usernome)
     {
         if (senha == usuarios[n].Usersenha)
         {
+            localStorage.setItem("UsuarioAtual", JSON.stringify(usuarios[n]));
             alert("Logado com sucesso!");
             window.location.href = 'To_do.html';
         }
@@ -47,17 +48,53 @@ document.getElementById("login").addEventListener("click", function(e)
     }
 });
 
-//Classe User feito em cada código para evitar trabalho com importação
+//Classe User feito em cada codigo para evitar trabalho com importacao
 class User
 {
+    UserID;
+
     Usernome;
     Usersenha;
 
-    constructor(novonome, novasenha)
+    ToDoList = [];
+
+    constructor(newID, novonome, novasenha)
     {
+        this.UserID = newID;
         this.Usernome = novonome;
         this.Usersenha = novasenha;
     }
+
+    AdicionarNovaTarefa(newTask)
+    {
+        this.ToDoList.push(novaTarefa);
+    }
+
+    RemoverTarefa(oldTask)
+    {
+        const index = this.ToDoList.indexOf(oldTask);
+
+        if (index > -1)
+        {
+            array.splice(index, 1);
+        }
+    }
 }
 
+class Task
+{
+    TaskID;
+    TaskName;
+    TaskState=false;
 
+    constructor(newTaskID, newTaskName)
+    {
+        this.TaskID = newTaskID;
+        this.TaskName = newTaskName;
+    }
+
+    UpdateTaskState()
+    {
+        this.TaskState = !this.TaskState;
+    }
+}
