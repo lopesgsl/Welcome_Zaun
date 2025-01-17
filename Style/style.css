@@ -6,9 +6,10 @@
 }
 
 :root{
-
-
+    --gold_lol: #D9B471;
+    --gold-urgot: #8C6249;
 }
+
 *{
     font-family: "TwinMarker";
     margin: 0;
@@ -20,4 +21,13 @@ body{
     background-position: bottom;
     width: 100vw;
     height: 100vh;
+}
+a{
+    color: var(--gold-urgot);
+    text-decoration: none;
+
+}
+a:hover{
+    color: var(--gold-urgot);
+    text-decoration: underline;
 }
