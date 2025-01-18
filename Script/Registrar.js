@@ -37,6 +37,10 @@ document.getElementById("registrar").addEventListener("click", function(e)
                     usuarios.push(new User(usuarios.length+1, nome, senha));
 
                     localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+                    alert("Conta criada com sucesso!");
+
+                    window.location.href = 'Login.html';
                 }
 
                 else

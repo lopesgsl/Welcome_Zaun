@@ -14,6 +14,13 @@ if (localStorage.getItem("UsuarioAtual") != null)
     }
 }
 
+else
+{
+    alert("Voce deve estar logado para usar esta pagina!");
+
+    window.location.href = 'Login.html';
+}
+
 //Adiciona uma tarefa quando o botão é clicado
 addTask.addEventListener('click', () => {
     adicionarTask();
