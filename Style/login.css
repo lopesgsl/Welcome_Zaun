@@ -52,7 +52,7 @@ div.input_div_login{
 }
 div.input_div_login .text{
     padding: 1.5px;
-    max-width: 60%;
+    width: 60%;
     background-color: var(--black-dr);
     border: var(--gold-urgot), 1px, solid;
     border-radius: 5px;
