@@ -93,7 +93,7 @@ function adicionarTask() {
                 span.style.textDecoration = 'none';
             } 
             else { 
-                span.style.textDecoration = 'line-through'; 
+                span.style.textDecoration = 'line-through';
             }
 
             SaveStateModifications(span.id);
