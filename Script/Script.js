@@ -12,7 +12,7 @@ if (localStorage.getItem("UsuarioAtual") != null) {
     }
 
     for (let n = 0; n < UsuarioAtual.ToDoList.length; n++) {
-        LoadUserTasks(UsuarioAtual.ToDoList[n].TaskID, UsuarioAtual.ToDoList[n].TaskName, UsuarioAtual.ToDoList[n].TaskState);
+        adicionarTask(UsuarioAtual.ToDoList[n].TaskID, UsuarioAtual.ToDoList[n].TaskName, UsuarioAtual.ToDoList[n].TaskState);
     }
 } else {
     alert("Voce deve estar logado para usar esta pagina!");
@@ -22,18 +22,20 @@ if (localStorage.getItem("UsuarioAtual") != null) {
 
 // Adiciona uma tarefa quando o botão é clicado
 addTask.addEventListener('click', () => {
-    adicionarTask();
+    adicionarTask(GenerateNewTaskID(), novaTask.value, null);
 });
 
 // Adiciona uma tarefa quando a tecla Enter é pressionada
 novaTask.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        adicionarTask();
+    if (e.key === 'Enter')
+    {
+        adicionarTask(GenerateNewTaskID(), novaTask.value, null);
     }
 });
 
-function adicionarTask() {
-    const text = novaTask.value;
+// Função para Adicionar e carregar tasks
+function adicionarTask(newTaskID, newTaskName, newTaskState) {
+    const text = newTaskName;
     if (text) {
         const listItem = document.createElement('li');
         listItem.className = 'taskItem';
@@ -46,32 +48,19 @@ function adicionarTask() {
         span.className = 'text';
         span.textContent = text;
 
-        repeat = true;
-        let i = 0;
-        let n = 1;
-        let testID = "TID-" + n;
+        listItem.id = newTaskID;
+        span.id = newTaskID;
 
-        if (UsuarioAtual.ToDoList.length > 0) {
-            while (repeat) {
-                repeat = false;
-                testID = "TID-" + n;
-
-                for (i = 0; i < UsuarioAtual.ToDoList.length; i++) 
-                {
-                    if (testID == UsuarioAtual.ToDoList[i].TaskID) {
-                        repeat = true;
-                    }
-                }
-
-                n += 1;
-            }
+        if (newTaskState)
+        {
+            span.style.textDecoration = 'line-through';
         }
 
-        listItem.id = testID;
-        span.id = testID;
-
-        UsuarioAtual.ToDoList.push(new Task(span.id, text));
-        SaveCurrentUserModifications();
+        else if (newTaskState == null)
+        {
+            UsuarioAtual.ToDoList.push(new Task(span.id, text));
+            SaveCurrentUserModifications();
+        }
 
         const deletar = document.createElement('button');
         deletar.className = 'btnDelete';
@@ -115,73 +104,34 @@ function adicionarTask() {
     }
 }
 
+//Gera um novo ID para as tasks
+function GenerateNewTaskID()
+{
+    let repeat = true;
+    let i = 0;
+    let n = 1;
+    let testID = "TID-" + n;
 
-//--------------------------------------------------------//
-//---------------------------TESTE------------------------//
-//--------------------------------------------------------//
-//Carregar todas as tarefas do usuario
-//Se possível, juntar com "adicionarTask" depois
-function LoadUserTasks(newTaskID, newTaskName, newTaskState) {
-    const text = newTaskName;
-    if (text) {
-        const listItem = document.createElement('li');
-        listItem.className = 'taskItem';
+    if (UsuarioAtual.ToDoList.length > 0)
+    {
+        while (repeat)
+        {
+            repeat = false;
+            testID = "TID-" + n;
 
-        const checkbox = document.createElement('button');
-        checkbox.className = 'btnCheck';
-        checkbox.innerHTML = '<i class="fas fa-check"></i>';
+            for (i = 0; i < UsuarioAtual.ToDoList.length; i++) 
+            {
+                if (testID == UsuarioAtual.ToDoList[i].TaskID) {
+                    repeat = true;
+                }
+            }
 
-        const span = document.createElement('span');
-        span.className = 'text';
-        span.textContent = text;
-        listItem.id = newTaskID;
-        span.id = newTaskID;
-
-        const deletar = document.createElement('button');
-        deletar.className = 'btnDelete';
-        deletar.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-
-        const editar = document.createElement('button');
-        editar.className = 'btnEdit';
-        editar.innerHTML = '<i class="fa-solid fa-pen"></i>';
-
-        if (newTaskState) {
-            span.style.textDecoration = 'line-through';
+            n += 1;
         }
-
-        listItem.appendChild(checkbox);
-        listItem.appendChild(span);
-        listItem.appendChild(editar);
-        listItem.appendChild(deletar);
-
-        taskList.appendChild(listItem);
-
-        deletar.addEventListener('click', () => {
-            taskList.removeChild(listItem);
-            RemoveItemFromToDoList(listItem.id);
-        });
-
-        checkbox.addEventListener('click', () => {
-            if (span.style.textDecoration == 'line-through') {
-                span.style.textDecoration = 'none';
-            } else {
-                span.style.textDecoration = 'line-through';
-            }
-
-            SaveStateModifications(span.id);
-        });
-
-        editar.addEventListener('click', () => {
-            const novoTexto = prompt("Edite sua tarefa:", span.textContent);
-            if (novoTexto !== null && novoTexto.trim() !== "") {
-                span.textContent = novoTexto;
-                SaveEditModifications(span.id, novoTexto);
-            }
-        });
     }
-}
 
-//--------------------------------------------------------//
+    return testID;
+}
 
 function SaveStateModifications(newText) {
     let i = 0;
