@@ -10,7 +10,7 @@
 h1{
     text-shadow: 5px 5px 7px rgba(0,0,0,0.6);
     color: var(--gold_lol);
-    padding: 70px;
+    padding: 60px;
     text-align: center;
     font-size: 80px;
     font-weight: 100;
@@ -33,7 +33,7 @@ div.container_conta{
     margin: auto;
     border-radius: 10px;
     background-color: rgba(47, 52, 61, 0.72);
-    border: 1px, solid, #A2845E;
+    border: 1px solid  var(--gold-urgot);
     padding: 25px;
 }
 div.input_div{
@@ -54,7 +54,9 @@ div.input_div_login .text{
     padding: 1.5px;
     width: 60%;
     background-color: var(--black-dr);
-    border: var(--gold-urgot), 1px, solid;
+    border: 1px solid var(--gold-urgot);
+    -webkit-border: 1px solid var(--gold-urgot);
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     color: white;
 }
@@ -62,14 +64,18 @@ div.input_div .text{
     padding: 1.5px;
     width: 60%;
     background-color: var(--black-dr);
-    border: var(--gold-urgot), 1px, solid;
+    border: 1px solid var(--gold-urgot);
+    -webkit-border: 1px solid var(--gold-urgot);
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     color: white;
 }
 button{
     background-color: var(--black-dr);
     color: var(--gold-urgot);
-    border: var(--gold-urgot), 1px, solid;
+    border: 1px solid var(--gold-urgot);
+    -webkit-border: 1px solid var(--gold-urgot);
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 20px;

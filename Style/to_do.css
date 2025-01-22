@@ -35,7 +35,7 @@ div.container-to-do{
     margin: auto;
     color: white;
     font-weight: 100;
-    padding: 50px;
+    padding: 60px;
 }
 div.input-container{
     margin: auto;
@@ -45,7 +45,9 @@ div.input-container{
     padding: 5px;
     width: 40%;
     background-color: var(--black-dr);
-    border: var(--gold-urgot), 1px, solid;
+    border: 1px solid var(--gold-urgot);
+    -webkit-border: 1px solid var(--gold-urgot);
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     color: white;
 }
@@ -55,7 +57,9 @@ button{
 button#btnAdd{
     background-color: var(--black-dr);
     color: var(--gold-urgot);
-    border: var(--gold-urgot), 1px, solid;
+    border: 1px solid var(--gold-urgot);
+    -webkit-border: 1px solid var(--gold-urgot);
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 20px;
@@ -67,7 +71,9 @@ button#btnAdd:hover{
 button.btnCheck{
     background-color: var(--black-dr);
     color: var(--gold-urgot);
-    border: var(--gold-urgot), 1px, solid;
+    border: 1px solid var(--gold-urgot);
+    -webkit-border: 1px solid var(--gold-urgot);
+    -webkit-border-radius: 8px;
     border-radius: 8px;
     padding: 3px;
 }
