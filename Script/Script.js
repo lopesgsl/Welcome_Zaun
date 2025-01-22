@@ -40,9 +40,13 @@ function adicionarTask(newTaskID, newTaskName, newTaskState) {
         const listItem = document.createElement('li');
         listItem.className = 'taskItem';
 
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'btnCheck';
+/*
         const checkbox = document.createElement('button');
         checkbox.className = 'btnCheck';
-        checkbox.innerHTML = '<i class="fas fa-check"></i>';
+        checkbox.innerHTML = '<i class="fas fa-check"></i>'; */
 
         const span = document.createElement('span');
         span.className = 'text';
