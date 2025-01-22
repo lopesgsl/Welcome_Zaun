@@ -31,7 +31,8 @@ div.container-to-do{
     background-image: url(../Imagens/image.png);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 300px;
+    background-position: top;
+    width: 400px;
     height: 80%;
     min-height: 484px;
     margin: auto;
@@ -73,14 +74,16 @@ button#btnAdd:hover{
     background-color: var(--black-dr-lite);
 }
 button.btnCheck{
-    max-height:30px;
+    max-height: 25px;
+    max-width: 25px;
+    min-width: 25px;
+    min-height: 25px;
     background-color: var(--black-dr);
     color: var(--gold-urgot);
     border: 1px solid var(--gold-urgot);
     -webkit-border: 1px solid var(--gold-urgot);
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-    padding: 3px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 button.btnDelete, .btnEdit{
     width: 50px;
