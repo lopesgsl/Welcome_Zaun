@@ -67,6 +67,23 @@ document.getElementById("registrar").addEventListener("click", function(e)
     }
 });
 
+//Background change animation
+let corpo = document.getElementsByTagName('body')[0];
+var index = 2;
+var imagens = [
+            "../Imagens/plano_de_fundo/Wallpaper_01.jpg",
+            "../Imagens/plano_de_fundo/Wallpaper_02.jpg",
+            "../Imagens/plano_de_fundo/Wallpaper_03.jpg",
+            "../Imagens/plano_de_fundo/Wallpaper_04.jpg"
+        ];
+
+setInterval(function()
+{
+    corpo.style.backgroundImage = 'url(' + imagens[index] + ')';
+    index += 1;
+    index = index%4
+}, 3000);
+
 //Classe User feito em cada codigo para evitar trabalho com importacaoo
 class User
 {
