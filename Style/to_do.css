@@ -20,6 +20,7 @@ h1{
     color: #FFF;
     -webkit-text-stroke-width: 1;
     -webkit-text-stroke-color: #000;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
     font-size: 50px;
     width: 100%;
     font-style: normal;
@@ -30,12 +31,15 @@ div.container-to-do{
     background-image: url(../Imagens/image.png);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 286px;
-    height: 77%;
+    width: 300px;
+    height: 80%;
+    min-height: 484px;
     margin: auto;
     color: white;
     font-weight: 100;
-    padding: 60px;
+    padding: 50px ;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 div.input-container{
     margin: auto;
@@ -43,7 +47,7 @@ div.input-container{
 }
 #input{
     padding: 5px;
-    width: 40%;
+    width: 60%;
     background-color: var(--black-dr);
     border: 1px solid var(--gold-urgot);
     -webkit-border: 1px solid var(--gold-urgot);
@@ -69,6 +73,7 @@ button#btnAdd:hover{
     background-color: var(--black-dr-lite);
 }
 button.btnCheck{
+    max-height:30px;
     background-color: var(--black-dr);
     color: var(--gold-urgot);
     border: 1px solid var(--gold-urgot);
@@ -85,6 +90,9 @@ button.btnDelete, .btnEdit{
 }
 button.btnDelete i{
     height: 100;
+}
+.text{
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }
 ul{
     list-style: none;
