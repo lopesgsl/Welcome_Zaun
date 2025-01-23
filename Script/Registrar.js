@@ -4,13 +4,13 @@ let nome;
 let senha;
 let senha2;
 
-//Buscando se há usuarios salvos
+//Buscando se ha usuarios salvos
 if (localStorage.getItem("usuarios") != null)
 {
     usuarios = JSON.parse(localStorage.getItem("usuarios"));
 }
 
-//Botão de registrar
+//Botao de registrar
 document.getElementById("registrar").addEventListener("click", function(e)
 {
     e.preventDefault();
@@ -20,23 +20,27 @@ document.getElementById("registrar").addEventListener("click", function(e)
     senha = document.getElementById("lrpword1").value;
     senha2 = document.getElementById("lrpword2").value;
 
-    //Verifica se o nome e senha informados estão vazios
+    //Verifica se o nome e senha informados estao vazios
     if (nome != "")
     {
         if (senha != "")
         {
-            //Verifica se as senhas são iguais
+            //Verifica se as senhas sao iguais
             if (senha == senha2)
             {
-                //Verifica se o nome de usuário ja existe
+                //Verifica se o nome de usuario ja existe
                 var nomeFind = usuarios.find((element) => element.Usernome == nome);
 
                 if (nomeFind == undefined)
                 {
-                    //Registrar o usuário
-                    usuarios.push(new User(nome, senha));
+                    //Registrar o usuario
+                    usuarios.push(new User(usuarios.length+1, nome, senha));
 
                     localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+                    alert("Conta criada com sucesso!");
+
+                    window.location.href = 'Login.html';
                 }
 
                 else
@@ -63,15 +67,35 @@ document.getElementById("registrar").addEventListener("click", function(e)
     }
 });
 
-//Classe User feito em cada código para evitar trabalho com importação
+//Classe User feito em cada codigo para evitar trabalho com importacaoo
 class User
 {
+    UserID;
+
     Usernome;
     Usersenha;
 
-    constructor(novonome, novasenha)
+    ToDoList = [];
+
+    constructor(newID, novonome, novasenha)
     {
+        this.UserID = newID;
         this.Usernome = novonome;
         this.Usersenha = novasenha;
+    }
+
+    AdicionarNovaTarefa(newTask)
+    {
+        this.ToDoList.push(novaTarefa);
+    }
+
+    RemoverTarefa(oldTask)
+    {
+        const index = this.ToDoList.indexOf(oldTask);
+
+        if (index > -1)
+        {
+            array.splice(index, 1);
+        }
     }
 }

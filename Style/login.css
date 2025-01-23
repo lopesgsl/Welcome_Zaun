@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+:root{
+    --gold_lol: #D9B471;
+    --gold-urgot: #8C6249;
+    --black-dr: #1D2026;
+    --black-dr-lite:#323641;
+}
+
+h1{
+    text-shadow: 5px 5px 7px rgba(0,0,0,0.6);
+    color: var(--gold_lol);
+    padding: 70px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+}
+h2{
+    text-align: center;
+    color: var(--gold_lol);
+    font-size: 60px;
+    font-weight: 100;
+    padding: 10px;
+}
+label{
+    color: var(--gold_lol);
+    margin: 5px;
+}
+div.container_conta{
+    text-align: center;
+    max-width: 25%;
+    min-width: 250px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgba(47, 52, 61, 0.72);
+    border: 1px, solid, #A2845E;
+    padding: 25px;
+}
+div.input_div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+div.input_div_login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+div.input_div_login .text{
+    padding: 1.5px;
+    width: 60%;
+    background-color: var(--black-dr);
+    border: var(--gold-urgot), 1px, solid;
+    border-radius: 5px;
+    color: white;
+}
+div.input_div .text{
+    padding: 1.5px;
+    width: 60%;
+    background-color: var(--black-dr);
+    border: var(--gold-urgot), 1px, solid;
+    border-radius: 5px;
+    color: white;
+}
+button{
+    background-color: var(--black-dr);
+    color: var(--gold-urgot);
+    border: var(--gold-urgot), 1px, solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--black-dr-lite);
+}

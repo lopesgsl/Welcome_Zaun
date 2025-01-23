@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+:root{
+    --gold_lol: #D9B471;
+    --gold-urgot: #8C6249;
+    --black-dr: #1D2026;
+    --black-dr-lite:#323641;
+}
+body{
+    display: flex;
+}
+h1{
+    text-align: center;
+    color: #FFF;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #000;
+    font-size: 80px;
+    width: 100%;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+div.container-to-do{
+    max-width: 30%;
+    min-width: 270px;
+    min-height: 70%;
+    margin: auto;
+    margin-top: 70px;
+    color: white;
+    font-weight: 100;
+    padding: 20px;
+    background-color: gray;
+}
+div.input-container{
+    margin: auto;
+    text-align: center;
+}
+#input{
+    padding: 5px;
+    width: 40%;
+    background-color: var(--black-dr);
+    border: var(--gold-urgot), 1px, solid;
+    border-radius: 5px;
+    color: white;
+}
+button#btnAdd{
+    background-color: var(--black-dr);
+    color: var(--gold-urgot);
+    border: var(--gold-urgot), 1px, solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+button#btnAdd:hover{
+    cursor: pointer;
+    background-color: var(--black-dr-lite);
+}
+button.btnCheck{
+    background-color: var(--black-dr);
+    color: var(--gold-urgot);
+    border: var(--gold-urgot), 1px, solid;
+    border-radius: 8px;
+    padding: 3px;
+}
+button.btnDelete{
+    width: 50px;
+    color: var(--gold-urgot);
+    border: none;
+    background: none;
+}
+button.btnDelete i{
+    height: 100;
+}
+ul{
+    list-style: none;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 5px;
+    font-size: 40px;
+}
+

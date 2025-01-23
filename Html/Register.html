@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Style/login.css">
+        <link rel="stylesheet" href="../Style/style.css">
+        <title>Welcome to Zaun</title>
     </head>
     <body>
-        <form id="formID">
-            <div>Nome</div>
-            <input type="text" id="lrname" name="lrname"><br>
-            <div>Senha</div>
-            <input type="text" id="lrpword1" name="lrpword1"><br>
-            <input type="text" id="lrpword2" name="lrpword2"><br>
-            <button id="registrar">Registrar</button>
-        </form>
+        <h1>Welcome to Zaun</h1>
+
+            <div class="container_conta">
+                <h2>Criando conta</h2>
+                <form id="formID">
+                    <div class="input_div_login">
+                        <label for="Irname">Nome:</label>
+                        <input type="text" id="lrname" name="lrname" class="text">
+                    </div>
+                    <div class="input_div_login">
+                        <label for="Irpword1">Senha:</label>
+                        <input type="text" id="lrpword1" name="lrpword1" class="text">
+                    </div>
+                    <div class="input_div_login">
+                        <label for="Irpword2">Confirma senha:</label>
+                        <input type="text" id="lrpword2" name="lrpword2" class="text">
+                    </div>
+                    <button id="registrar">Registrar</button>
+                </form>
+                <a href="Login.html">Já tem conta?</a>
+            </div>
         <br>
-        <a href="Login.html">Já tem conta?</a>
         <script src="../Script/Registrar.js"></script>
     </body>
 </html>
