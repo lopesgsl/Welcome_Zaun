@@ -34,8 +34,14 @@ document.getElementById("registrar").addEventListener("click", function(e)
 
                 if (nomeFind == undefined)
                 {
+                    let iconeindex = 0;
+                    if (localStorage.getItem("IconSelected") != null)
+                    {
+                        iconeindex = JSON.parse(localStorage.getItem("IconSelected"));
+                    }
+
                     //Registrar o usuario
-                    usuarios.push(new User(usuarios.length+1, nome, senha));
+                    usuarios.push(new User(usuarios.length+1, nome, senha, iconeindex));
 
                     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
@@ -93,13 +99,16 @@ class User
     Usernome;
     Usersenha;
 
+    iconselected;
+
     ToDoList = [];
 
-    constructor(newID, novonome, novasenha)
+    constructor(newID, novonome, novasenha, newicon)
     {
         this.UserID = newID;
         this.Usernome = novonome;
         this.Usersenha = novasenha;
+        this.iconselected = newicon;
     }
 
     AdicionarNovaTarefa(newTask)

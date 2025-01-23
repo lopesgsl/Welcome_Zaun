@@ -9,6 +9,12 @@ if (localStorage.getItem("usuarios") != null)
     usuarios = JSON.parse(localStorage.getItem("usuarios"));
 }
 
+if (localStorage.getItem("IconSelected") != null)
+{
+    let iconeindex = 0;
+    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+}
+
 //Botao do login
 document.getElementById("login").addEventListener("click", function(e)
 {
@@ -75,11 +81,12 @@ class User
 
     ToDoList = [];
 
-    constructor(newID, novonome, novasenha)
+    constructor(newID, novonome, novasenha, newicon)
     {
         this.UserID = newID;
         this.Usernome = novonome;
         this.Usersenha = novasenha;
+        this.iconselected = newicon;
     }
 
     AdicionarNovaTarefa(newTask)

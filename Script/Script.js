@@ -3,9 +3,23 @@ const addTask = document.getElementById('btnAdd');
 const taskList = document.getElementById('taskList');
 
 let UsuarioAtual;
+let iconeindex = 0;
+
+let corpo = document.getElementsByTagName('body')[0];
+
+const icones =
+[
+    'url(../Imagens/plano_de_fundo/tema_jinx.gif)',
+    'url(../Imagens/plano_de_fundo/tema_ekko.gif)',
+    'url(../Imagens/plano_de_fundo/tema_warwick.gif)',
+    'url(../Imagens/plano_de_fundo/tema_urgot.gif)',
+    'url(../Imagens/plano_de_fundo/tema_drmundo.gif)',
+    'url(../Imagens/plano_de_fundo/tema_rato.gif)'
+];
 
 if (localStorage.getItem("UsuarioAtual") != null) {
     UsuarioAtual = JSON.parse(localStorage.getItem("UsuarioAtual"));
+    corpo.style.backgroundImage = icones[UsuarioAtual.iconselected];
 
     if (!UsuarioAtual.ToDoList) {
         UsuarioAtual.ToDoList = [];
@@ -42,7 +56,7 @@ function adicionarTask(newTaskID, newTaskName, newTaskState) {
 
         const checkbox = document.createElement('button');
         checkbox.className = 'btnCheck';
-        checkbox.innerHTML = '<i class="fas fa-check"></i>';
+        checkbox.innerHTML = '';
 
         const span = document.createElement('span');
         span.className = 'text';
@@ -54,6 +68,7 @@ function adicionarTask(newTaskID, newTaskName, newTaskState) {
         if (newTaskState)
         {
             span.style.textDecoration = 'line-through';
+            checkbox.innerHTML = '<i class="fas fa-check"></i>';
         }
 
         else if (newTaskState == null)
@@ -87,8 +102,10 @@ function adicionarTask(newTaskID, newTaskName, newTaskState) {
         checkbox.addEventListener('click', () => {
             if (span.style.textDecoration == 'line-through') {
                 span.style.textDecoration = 'none';
+                checkbox.innerHTML = '';
             } else {
                 span.style.textDecoration = 'line-through';
+                checkbox.innerHTML = '<i class="fas fa-check"></i>';
             }
 
             SaveStateModifications(span.id);
@@ -196,29 +213,13 @@ function ResetTasks() {
     taskList.innerHTML = '';
 }
 
-//Background change animation
-/*et corpo = document.getElementsByTagName('body')[0];
-var index = 2;
-var imagens = [
-            "../Imagens/plano_de_fundo/Wallpaper_01.jpg",
-            "../Imagens/plano_de_fundo/Wallpaper_02.jpg",
-            "../Imagens/plano_de_fundo/Wallpaper_03.jpg",
-            "../Imagens/plano_de_fundo/Wallpaper_04.jpg"
-        ];
-
-setInterval(function()
-{
-    corpo.style.backgroundImage = 'url(' + imagens[index] + ')';
-    index += 1;
-    index = index%4
-}, 3000);*/
-
 // Class de Usuario e Tarefa
 class User {
-    constructor(newID, novonome, novasenha) {
+    constructor(newID, novonome, novasenha, newicon) {
         this.UserID = newID;
         this.Usernome = novonome;
         this.Usersenha = novasenha;
+        this.iconselected = newicon;
         this.ToDoList = [];
     }
 }
