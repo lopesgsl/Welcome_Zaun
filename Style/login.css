@@ -27,6 +27,10 @@ div.container_conta{
     border: 1px solid  var(--gold-urgot);
     padding: 25px;
 }
+form#formcriar{
+    display: flex;
+    flex-direction: row;
+}
 div.input_div{
     display: flex;
     justify-content: space-around;
@@ -70,6 +74,9 @@ button{
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 20px;
+}
+button#registrar{
+    margin: auto;
 }
 button:hover{
     cursor: pointer;
