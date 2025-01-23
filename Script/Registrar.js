@@ -3,6 +3,7 @@ let usuarios = [];
 let nome;
 let senha;
 let senha2;
+let tema;
 
 //Buscando se ha usuarios salvos
 if (localStorage.getItem("usuarios") != null)
@@ -68,7 +69,7 @@ document.getElementById("registrar").addEventListener("click", function(e)
 });
 
 //Background change animation
-let corpo = document.getElementsByTagName('body')[0];
+/*let corpo = document.getElementsByTagName('body')[0];
 var index = 2;
 var imagens = [
             "../Imagens/plano_de_fundo/Wallpaper_01.jpg",
@@ -82,7 +83,7 @@ setInterval(function()
     corpo.style.backgroundImage = 'url(' + imagens[index] + ')';
     index += 1;
     index = index%4
-}, 3000);
+}, 3000);*/
 
 //Classe User feito em cada codigo para evitar trabalho com importacaoo
 class User

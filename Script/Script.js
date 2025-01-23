@@ -40,13 +40,9 @@ function adicionarTask(newTaskID, newTaskName, newTaskState) {
         const listItem = document.createElement('li');
         listItem.className = 'taskItem';
 
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'btnCheck';
-/*
         const checkbox = document.createElement('button');
         checkbox.className = 'btnCheck';
-        checkbox.innerHTML = '<i class="fas fa-check"></i>'; */
+        checkbox.innerHTML = '<i class="fas fa-check"></i>';
 
         const span = document.createElement('span');
         span.className = 'text';
@@ -201,7 +197,7 @@ function ResetTasks() {
 }
 
 //Background change animation
-let corpo = document.getElementsByTagName('body')[0];
+/*et corpo = document.getElementsByTagName('body')[0];
 var index = 2;
 var imagens = [
             "../Imagens/plano_de_fundo/Wallpaper_01.jpg",
@@ -215,7 +211,7 @@ setInterval(function()
     corpo.style.backgroundImage = 'url(' + imagens[index] + ')';
     index += 1;
     index = index%4
-}, 3000);
+}, 3000);*/
 
 // Class de Usuario e Tarefa
 class User {
