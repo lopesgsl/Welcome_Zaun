@@ -24,14 +24,6 @@ body{
     width: 100vw;
     height: 100vh;
 }
-h1{
-    text-shadow: 5px 5px 7px rgba(0,0,0,0.6);
-    color: var(--gold_lol);
-    padding: 30px;
-    text-align: center;
-    font-size: 80px;
-    font-weight: 100;
-}
 a{
     color: var(--gold-urgot);
     text-decoration: none;

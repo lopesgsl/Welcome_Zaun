@@ -1,4 +1,4 @@
-const body = document.getElementById = 'anim';
+let corpo = document.getElementsByTagName('body')[0];
 
 /*
 //se o tema for do dr mundo
@@ -57,42 +57,42 @@ if (tema == 'warwick'){
 const iconeJinx = document.getElementById('icon_jinx');
 iconeJinx.addEventListener('click', ()=>{
     //tema = 'jinx';
-    body.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_jinx.gif)';
+    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_jinx.gif)';
     document.documentElement.style.setProperty("--tema", "#3470B9");
 });
 
 const iconeEkko = document.getElementById('icon_ekko');
 iconeEkko.addEventListener('click', ()=>{
     //tema = 'ekko';
-    body.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_ekko.gif)';
+    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_ekko.gif)';
     document.documentElement.style.setProperty("--tema", "#21A68D");
 });
 
 const iconeWarwick = document.getElementById('icon_warwick');
 iconeWarwick.addEventListener('click', ()=>{
     //tema = 'warwick';
-    body.style.background.image = 'url(../Imagens/plano_de_fundo/tema_warwick.gif)';
+    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_warwick.gif)';
     document.documentElement.style.setProperty("--tema", "#CC1E35");
 });
 
 const iconeUrgot = document.getElementById('icon_urgot');
 iconeUrgot.addEventListener('click', ()=>{
     //tema = 'urgot';
-    body.style.background.image = 'url(../Imagens/plano_de_fundo/tema_urgot.gif)';
+    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_urgot.gif)';
     document.documentElement.style.setProperty("--tema", "#8C6249");
 });
 
 const iconeDrMundo = document.getElementById('icon_drmundo');
 iconeDrMundo.addEventListener('click', ()=>{
     //tema = 'dr_mundo';
-    body.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_drmundo.gif)';
+    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_drmundo.gif)';
     document.documentElement.style.setProperty("--tema", "#A352D9");
 });
 
 const iconeRato = document.getElementById('icon_rato');
 iconeRato.addEventListener('click', ()=>{
     //tema = 'rato';
-    body.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_rato.gif)';
-    document.documentElement.style.setProperty("--tema", "#A352D9");
+    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_rato.gif)';
+    document.documentElement.style.setProperty("--tema", "#30F274");
 });
 

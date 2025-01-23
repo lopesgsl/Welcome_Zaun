@@ -6,6 +6,14 @@
     --black-dr: #1D2026;
     --black-dr-lite:#323641;
 }
+h1{
+    text-shadow: 5px 5px 7px rgba(0,0,0,0.6);
+    color: var(--gold_lol);
+    padding: 30px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+}
 h2{
     text-align: center;
     color: var(--gold_lol);
