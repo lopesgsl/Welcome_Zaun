@@ -57,14 +57,14 @@ if (tema == 'warwick'){
 const iconeJinx = document.getElementById('icon_jinx');
 iconeJinx.addEventListener('click', ()=>{
     //tema = 'jinx';
-    body.style.background.image = 'url(../Imagens/plano_de_fundo/tema_jinx.gif)';
+    body.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_jinx.gif)';
     document.documentElement.style.setProperty("--tema", "#3470B9");
 });
 
 const iconeEkko = document.getElementById('icon_ekko');
 iconeEkko.addEventListener('click', ()=>{
     //tema = 'ekko';
-    body.style.background.image = 'url(../Imagens/plano_de_fundo/tema_ekko.gif)';
+    body.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_ekko.gif)';
     document.documentElement.style.setProperty("--tema", "#21A68D");
 });
 
