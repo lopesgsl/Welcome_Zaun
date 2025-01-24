@@ -1,7 +1,7 @@
-let corpo = document.getElementsByTagName('body')[0];
-let iconeindex;
+let corpoBG = document.getElementsByTagName('body')[0];
+let iconIndex;
 
-const icones =
+const iconesTemas =
 [
     'url(../Imagens/plano_de_fundo/tema_jinx.gif)',
     'url(../Imagens/plano_de_fundo/tema_ekko.gif)',
@@ -11,66 +11,76 @@ const icones =
     'url(../Imagens/plano_de_fundo/tema_rato.gif)'
 ];
 
+const coresTema = [
+    "#3470B9",
+    "#21A68D",
+    "#CC1E35",
+    "#8C6249",
+    "#A352D9",
+    "#30F274"
+];
+
 if (localStorage.getItem("UsuarioAtual") != null)
 {
     let UsuarioAtual = JSON.parse(localStorage.getItem("UsuarioAtual"));
 
-    corpo.style.backgroundImage = icones[UsuarioAtual.iconselected];
+    corpoBG.style.backgroundImage = iconesTemas[UsuarioAtual.iconselected];
+    document.documentElement.style.setProperty("--tema", coresTema[UsuarioAtual.iconselected]);
 }
 
-//////////////////////////icones//////////////////////////
+//////////////////////////iconesTemas//////////////////////////
 
 const iconeJinx = document.getElementById('icon_jinx');
 iconeJinx.addEventListener('click', ()=>{
     //tema = 'jinx';
-    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_jinx.gif)';
+    corpoBG.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_jinx.gif)';
     document.documentElement.style.setProperty("--tema", "#3470B9");
-    iconeindex = 0;
-    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+    iconIndex = 0;
+    localStorage.setItem("IconSelected", JSON.stringify(iconIndex));
 });
 
 const iconeEkko = document.getElementById('icon_ekko');
 iconeEkko.addEventListener('click', ()=>{
     //tema = 'ekko';
-    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_ekko.gif)';
+    corpoBG.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_ekko.gif)';
     document.documentElement.style.setProperty("--tema", "#21A68D");
-    iconeindex = 1;
-    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+    iconIndex = 1;
+    localStorage.setItem("IconSelected", JSON.stringify(iconIndex));
 });
 
 const iconeWarwick = document.getElementById('icon_warwick');
 iconeWarwick.addEventListener('click', ()=>{
     //tema = 'warwick';
-    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_warwick.gif)';
+    corpoBG.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_warwick.gif)';
     document.documentElement.style.setProperty("--tema", "#CC1E35");
-    iconeindex = 2;
-    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+    iconIndex = 2;
+    localStorage.setItem("IconSelected", JSON.stringify(iconIndex));
 });
 
 const iconeUrgot = document.getElementById('icon_urgot');
 iconeUrgot.addEventListener('click', ()=>{
     //tema = 'urgot';
-    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_urgot.gif)';
+    corpoBG.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_urgot.gif)';
     document.documentElement.style.setProperty("--tema", "#8C6249");
-    iconeindex = 3;
-    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+    iconIndex = 3;
+    localStorage.setItem("IconSelected", JSON.stringify(iconIndex));
 });
 
 const iconeDrMundo = document.getElementById('icon_drmundo');
 iconeDrMundo.addEventListener('click', ()=>{
     //tema = 'dr_mundo';
-    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_drmundo.gif)';
+    corpoBG.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_drmundo.gif)';
     document.documentElement.style.setProperty("--tema", "#A352D9");
-    iconeindex = 4;
-    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+    iconIndex = 4;
+    localStorage.setItem("IconSelected", JSON.stringify(iconIndex));
 });
 
 const iconeRato = document.getElementById('icon_rato');
 iconeRato.addEventListener('click', ()=>{
     //tema = 'rato';
-    corpo.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_rato.gif)';
+    corpoBG.style.backgroundImage = 'url(../Imagens/plano_de_fundo/tema_rato.gif)';
     document.documentElement.style.setProperty("--tema", "#30F274");
-    iconeindex = 5;
-    localStorage.setItem("IconSelected", JSON.stringify(iconeindex));
+    iconIndex = 5;
+    localStorage.setItem("IconSelected", JSON.stringify(iconIndex));
 });
 

@@ -2,7 +2,7 @@
 
 :root{
     --gold_lol: #D9B471;
-    --gold-urgot: ;
+    --gold-urgot: #8C6249;
     --black-dr: #1D2026;
     --black-dr-lite:#323641;
 }
@@ -83,10 +83,11 @@ button{
     padding: 5px;
     margin-bottom: 20px;
 }
-button#registrar{
-    margin: auto;
-}
 button:hover{
     cursor: pointer;
     background-color: var(--black-dr-lite);
 }
+button#registrar{
+    margin: auto;
+}
+
