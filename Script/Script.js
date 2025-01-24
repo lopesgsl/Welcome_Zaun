@@ -56,74 +56,83 @@ novaTask.addEventListener('keyup', (e) => {
 // Função para Adicionar e carregar tasks
 function adicionarTask(newTaskID, newTaskName, newTaskState) {
     const text = newTaskName;
-    if (text) {
-        const listItem = document.createElement('li');
-        listItem.className = 'taskItem';
-
-        const checkbox = document.createElement('button');
-        checkbox.className = 'btnCheck';
-        checkbox.innerHTML = '';
-
-        const span = document.createElement('span');
-        span.className = 'text';
-        span.textContent = text;
-
-        listItem.id = newTaskID;
-        span.id = newTaskID;
-
-        if (newTaskState)
+    if (text)
+    {
+        if (text.charAt(0) != " ")
         {
-            span.style.textDecoration = 'line-through';
-            checkbox.innerHTML = '<i class="fas fa-check"></i>';
-        }
+            const listItem = document.createElement('li');
+            listItem.className = 'taskItem';
 
-        else if (newTaskState == null)
-        {
-            UsuarioAtual.ToDoList.push(new Task(span.id, text));
-            SaveCurrentUserModifications();
-        }
+            const checkbox = document.createElement('button');
+            checkbox.className = 'btnCheck';
+            checkbox.innerHTML = '';
 
-        const deletar = document.createElement('button');
-        deletar.className = 'btnDelete';
-        deletar.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            const span = document.createElement('span');
+            span.className = 'text';
+            span.textContent = text;
 
-        const editar = document.createElement('button');
-        editar.className = 'btnEdit';
-        editar.innerHTML = '<i class="fa-solid fa-pen"></i>';
+            listItem.id = newTaskID;
+            span.id = newTaskID;
 
-        listItem.appendChild(checkbox);
-        listItem.appendChild(span);
-        listItem.appendChild(editar);
-        listItem.appendChild(deletar);
-
-        taskList.appendChild(listItem);
-
-        novaTask.value = '';
-
-        deletar.addEventListener('click', () => {
-            taskList.removeChild(listItem);
-            RemoveItemFromToDoList(listItem.id);
-        });
-
-        checkbox.addEventListener('click', () => {
-            if (span.style.textDecoration == 'line-through') {
-                span.style.textDecoration = 'none';
-                checkbox.innerHTML = '';
-            } else {
+            if (newTaskState)
+            {
                 span.style.textDecoration = 'line-through';
                 checkbox.innerHTML = '<i class="fas fa-check"></i>';
             }
 
-            SaveStateModifications(span.id);
-        });
-
-        editar.addEventListener('click', () => {
-            const novoTexto = prompt("Edite sua tarefa:", span.textContent);
-            if (novoTexto !== null && novoTexto.trim() !== "") {
-                span.textContent = novoTexto;
-                SaveEditModifications(span.id, novoTexto);
+            else if (newTaskState == null)
+            {
+                UsuarioAtual.ToDoList.push(new Task(span.id, text));
+                SaveCurrentUserModifications();
             }
-        });
+
+            const deletar = document.createElement('button');
+            deletar.className = 'btnDelete';
+            deletar.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+            const editar = document.createElement('button');
+            editar.className = 'btnEdit';
+            editar.innerHTML = '<i class="fa-solid fa-pen"></i>';
+
+            listItem.appendChild(checkbox);
+            listItem.appendChild(span);
+            listItem.appendChild(editar);
+            listItem.appendChild(deletar);
+
+            taskList.appendChild(listItem);
+
+            novaTask.value = '';
+
+            deletar.addEventListener('click', () => {
+                taskList.removeChild(listItem);
+                RemoveItemFromToDoList(listItem.id);
+            });
+
+            checkbox.addEventListener('click', () => {
+                if (span.style.textDecoration == 'line-through') {
+                    span.style.textDecoration = 'none';
+                    checkbox.innerHTML = '';
+                } else {
+                    span.style.textDecoration = 'line-through';
+                    checkbox.innerHTML = '<i class="fas fa-check"></i>';
+                }
+
+                SaveStateModifications(span.id);
+            });
+
+            editar.addEventListener('click', () => {
+                const novoTexto = prompt("Edite sua tarefa:", span.textContent);
+                if (novoTexto !== null && novoTexto.trim() !== "") {
+                    span.textContent = novoTexto;
+                    SaveEditModifications(span.id, novoTexto);
+                }
+            });
+        }
+
+        else
+        {
+            alert("Remova o espaco no comeco, por favor");
+        }
     }
 }
 
