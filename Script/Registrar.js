@@ -5,6 +5,28 @@ let senha;
 let senha2;
 let tema;
 
+if (localStorage.getItem("UsuarioAtual") != null) {
+    window.location.href = 'To_do.html';
+}
+
+const iconesIMG =
+[
+    '../Imagens/plano_de_fundo/icon_jinx.webp',
+    '../Imagens/plano_de_fundo/icon_ekko.webp',
+    '../Imagens/plano_de_fundo/icon_warwick.webp',
+    '../Imagens/plano_de_fundo/icon_urgot.webp',
+    '../Imagens/plano_de_fundo/icon_dr_mundo.webp',
+    '../Imagens/plano_de_fundo/icon_twitch.webp'
+];
+
+let iconeindex = 0;
+if (localStorage.getItem("IconSelected") != null)
+{
+    iconeindex = JSON.parse(localStorage.getItem("IconSelected"));
+}
+
+document.getElementById("edit_icon").src  = iconesIMG[iconeindex];
+
 //Buscando se ha usuarios salvos
 if (localStorage.getItem("usuarios") != null)
 {
@@ -34,12 +56,6 @@ document.getElementById("registrar").addEventListener("click", function(e)
 
                 if (nomeFind == undefined)
                 {
-                    let iconeindex = 0;
-                    if (localStorage.getItem("IconSelected") != null)
-                    {
-                        iconeindex = JSON.parse(localStorage.getItem("IconSelected"));
-                    }
-
                     //Registrar o usuario
                     usuarios.push(new User(usuarios.length+1, nome, senha, iconeindex));
 
@@ -47,7 +63,8 @@ document.getElementById("registrar").addEventListener("click", function(e)
 
                     alert("Conta criada com sucesso!");
 
-                    window.location.href = 'Login.html';
+                    localStorage.setItem("UsuarioAtual", JSON.stringify(usuarios[usuarios.length-1]));
+                    window.location.href = 'To_do.html';
                 }
 
                 else

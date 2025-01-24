@@ -1,6 +1,7 @@
 const novaTask = document.getElementById('input');
 const addTask = document.getElementById('btnAdd');
 const taskList = document.getElementById('taskList');
+const logoutBottom = document.getElementById('logout');
 
 let UsuarioAtual;
 let iconeindex = 0;
@@ -33,6 +34,11 @@ if (localStorage.getItem("UsuarioAtual") != null) {
 
     window.location.href = 'Login.html';
 }
+
+logoutBottom.addEventListener('click', () =>
+{
+    delete localStorage.UsuarioAtual;
+});
 
 // Adiciona uma tarefa quando o botão é clicado
 addTask.addEventListener('click', () => {

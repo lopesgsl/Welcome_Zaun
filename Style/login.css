@@ -63,6 +63,9 @@ div.input_div_login .text{
     border-radius: 5px;
     color: white;
 }
+div.tema img{
+    border-radius: 60px;
+}
 div.input_div .text{
     padding: 1.5px;
     width: 60%;

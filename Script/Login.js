@@ -3,6 +3,10 @@ let usuarios = [];
 let nome;
 let senha;
 
+if (localStorage.getItem("UsuarioAtual") != null) {
+    window.location.href = 'To_do.html';
+}
+
 //Buscando se ha usuarios salvos
 if (localStorage.getItem("usuarios") != null)
 {
